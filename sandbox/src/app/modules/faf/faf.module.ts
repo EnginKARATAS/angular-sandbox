@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FafdashComponent } from './components/fafdash/fafdash.component';
 import { FafRoutingModule } from './faf-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { FafRoutingModule } from './faf-routing.module';
   ],
   imports: [
     CommonModule,
-    FafRoutingModule
+    FafRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class FafModule { }

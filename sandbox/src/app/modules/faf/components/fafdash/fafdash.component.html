@@ -1,4 +1,42 @@
-<p>fafdash works!</p>
+<p>Form Status: {{ profileForm.status }}</p>
+<p>Form valid: {{ profileForm.valid }}</p>
 
-<input type="text" name="name" id="name">
-<input type="button" value="Tıkla">
+<form [formGroup]= profileForm>
+    <label>İsim</label>
+    <input formControlName="firstName" type="text" name="name" id="name">
+    <label>Soyisim</label>
+    <input formControlName="lastName" type="text" name="surname" id="surname">
+
+    <p>Butonun görünmesi için tüm alanlar doldulmalıdır.</p>
+
+    <div formGroupName="address">
+        <h2>Address</h2>
+      
+        <label for="street">Street: </label>
+        <input id="street" type="text" formControlName="street">
+      
+        <label for="city">City: </label>
+        <input id="city" type="text" formControlName="city">
+      
+        <label for="state">State: </label>
+        <input id="state" type="text" formControlName="state">
+      
+        <label for="zip">Zip Code: </label>
+        <input id="zip" type="text" formControlName="zip">
+      </div>
+
+      <div formArrayName="aliases">
+        <h2>Aliases</h2>
+        <button (click)="addAlias()">+ Add another alias</button>
+      
+        <div *ngFor="let alias of aliases.controls; let i=index">
+          <!-- The repeated alias template -->
+          <label for="alias-{{ i }}">Alias:</label>
+          <input id="alias-{{ i }}" type="text" [formControlName]="i">
+        </div>
+      </div>
+
+      <button (click)="updateProfile()">Update Profile</button>
+
+    <button type="submit" [disabled]="!profileForm.valid">Gönder</button>
+</form>
