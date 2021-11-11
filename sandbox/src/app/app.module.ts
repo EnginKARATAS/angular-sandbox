@@ -3,16 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { FafModule } from './modules/faf/faf.module';
-import { AppRoutingModule } from './app-routing.module';
+// import { FafdashComponent } from './modules/faf/components/fafdash/fafdash.component';
+import { MainComponent } from './modules/main/main.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MainComponent],
   imports: [
     BrowserModule,
-    FafModule,
-    AppRoutingModule
-
+    
+    RouterModule.forRoot([
+       {path:'', component: MainComponent}
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent],

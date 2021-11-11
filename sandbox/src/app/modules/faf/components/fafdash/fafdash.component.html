@@ -1,4 +1,4 @@
-<p>Form Status: {{ profileForm.status }}</p>
+<!-- <p>Form Status: {{ profileForm.status }}</p>
 <p>Form valid: {{ profileForm.valid }}</p>
 
 <form [formGroup]= profileForm>
@@ -30,7 +30,6 @@
         <button (click)="addAlias()">+ Add another alias</button>
       
         <div *ngFor="let alias of aliases.controls; let i=index">
-          <!-- The repeated alias template -->
           <label for="alias-{{ i }}">Alias:</label>
           <input id="alias-{{ i }}" type="text" [formControlName]="i">
         </div>
@@ -39,4 +38,4 @@
       <button (click)="updateProfile()">Update Profile</button>
 
     <button type="submit" [disabled]="!profileForm.valid">Gönder</button>
-</form>
+</form> -->
