@@ -74,7 +74,7 @@ export class SwitchPortService {
         },
         {
           "name": "sw_3",
-          "fiber": {   
+          "fiber": {    
             "1G": {
               "total": 20,
               "usage": 12
